@@ -5,6 +5,7 @@ services:
       - .env
     ports:
       - "${PORT:-4434}:443"
+      - "${METRIC_PORT:-8888}:8888"
     volumes:
       - "./config:/app/config"
     restart: unless-stopped
