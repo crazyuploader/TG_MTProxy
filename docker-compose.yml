@@ -1,0 +1,9 @@
+services:
+  tg_proxy:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-4434}:443"
+    volumes:
+      - "${PWD}/config:/app/config"
