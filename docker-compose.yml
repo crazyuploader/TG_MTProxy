@@ -6,4 +6,4 @@ services:
     ports:
       - "${PORT:-4434}:443"
     volumes:
-      - "${PWD}/config:/app/config"
+      - "./config:/app/config"
