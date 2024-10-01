@@ -7,3 +7,4 @@ services:
       - "${PORT:-4434}:443"
     volumes:
       - "./config:/app/config"
+    restart: unless-stopped

@@ -26,5 +26,9 @@ RUN make
 ENV PROXY_SECRET_FILE=/app/config/proxy-secret
 ENV PROXY_CONFIG_FILE=/app/config/proxy-multi.conf
 
+# Expose Ports
+EXPOSE 443
+EXPOSE 8888
+
 # Set Entry point
-CMD "/app/mtproxy/objs/bin/mtproto-proxy" -u nobody -p 8888 -H 443 -S $SECRET --aes-pwd $PROXY_SECRET_FILE $PROXY_CONFIG_FILE -M 1
+CMD "/app/mtproxy/objs/bin/mtproto-proxy" -u nobody -p 8888 -H 443 -S $SECRET --aes-pwd $PROXY_SECRET_FILE $PROXY_CONFIG_FILE -M 1 --http-stats
